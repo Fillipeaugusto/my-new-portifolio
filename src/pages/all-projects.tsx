@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 import { Projects } from '../Mocks/Projects';
 export default function AllProjects() {
@@ -49,15 +50,16 @@ export default function AllProjects() {
 				<div className="w-full px-5 py-6 mx-auto space-y-5  sm:space-y-8 md:space-y-16 max-w-7xl">
 					<div className="flex flex-col items-center sm:px-5 md:flex-row">
 						<div className="w-full md:w-1/2">
-							<a
-								href={`http://localhost:3000/projects/${bigData.slug}`}
-								className="block"
+							<Link
+								href={`https://test-blog-roan.vercel.app/projects/${bigData.slug}`}
 							>
-								<img
-									className="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
-									src={bigData.cover.src}
-								/>
-							</a>
+								<a className="block">
+									<img
+										className="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
+										src={bigData.cover.src}
+									/>
+								</a>
+							</Link>
 						</div>
 						<div className="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
 							<div className="flex flex-col items-start justify-center h-full space-y-3 transform md:pl-10 lg:pl-16 md:space-y-5">
@@ -73,9 +75,9 @@ export default function AllProjects() {
 									<span>Em destaque</span>
 								</div>
 								<h1 className="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">
-									<a href={`http://localhost:3000/projects/${bigData.slug}`}>
-										{bigData.name}.
-									</a>
+									<Link href={`http://localhost:3000/projects/${bigData.slug}`}>
+										<a>{bigData.name}.</a>
+									</Link>
 								</h1>
 								<p className="pt-2 text-sm font-medium">
 									by{' '}
@@ -95,12 +97,14 @@ export default function AllProjects() {
 									className="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4"
 									key={project.id}
 								>
-									<a href={`/projects/${project.slug}`} className="block">
-										<img
-											className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
-											src={project.cover.src}
-										/>
-									</a>
+									<Link href={`/projects/${project.slug}`}>
+										<a className="block">
+											<img
+												className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
+												src={project.cover.src}
+											/>
+										</a>
+									</Link>
 									<div className="bg-blue-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
 										<span>{project.technology}</span>
 									</div>
