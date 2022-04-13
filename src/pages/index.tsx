@@ -56,7 +56,7 @@ export default function Home() {
 									</svg>
 								</a>
 								<a
-									href="www.linkedin.com/in/fillipeaugustoribeiro"
+									href="http://www.linkedin.com/in/fillipeaugustoribeiro"
 									target="_blank"
 									className="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
 									rel="noreferrer"
@@ -72,7 +72,7 @@ export default function Home() {
 								<a
 									href="/downloads/curriculo-Fillipe-Augusto.pdf"
 									download="curriculo-Fillipe-Augusto.pdf"
-									className="flex block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
+									className=" flex block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
 									rel="noreferrer"
 								>
 									<svg
@@ -97,7 +97,7 @@ export default function Home() {
 
 			<MyExperience />
 			<Certification />
-			<div className="mb-40 mt-20 flex justify-center items-center ">
+			{/* <div className="mb-40 mt-20 flex justify-center items-center ">
 				<div className="grid grid-cols-6 max-w-2xl mx-8 rounded-xl bg-blue-500 shadow-lg  shadow-blue-500/90">
 					<div className="col-span-4">
 						<h2 className="font-bold text-3xl text-white ml-10 mt-8">
@@ -136,7 +136,7 @@ export default function Home() {
 						/>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 }

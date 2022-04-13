@@ -50,9 +50,7 @@ export default function AllProjects() {
 				<div className="w-full px-5 py-6 mx-auto space-y-5  sm:space-y-8 md:space-y-16 max-w-7xl">
 					<div className="flex flex-col items-center sm:px-5 md:flex-row">
 						<div className="w-full md:w-1/2">
-							<Link
-								href={`https://test-blog-roan.vercel.app/projects/${bigData.slug}`}
-							>
+							<Link href={`/projects/${bigData.slug}`}>
 								<a className="block">
 									<img
 										className="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
@@ -75,7 +73,7 @@ export default function AllProjects() {
 									<span>Em destaque</span>
 								</div>
 								<h1 className="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">
-									<Link href={`http://localhost:3000/projects/${bigData.slug}`}>
+									<Link href={`/projects/${bigData.slug}`}>
 										<a>{bigData.name}.</a>
 									</Link>
 								</h1>
