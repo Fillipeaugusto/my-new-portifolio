@@ -455,7 +455,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 	const { slug } = params;
 	try {
 		const projectData = await api.get<Project>(
-			`http://localhost:3000/api/${slug}`
+			`https://test-blog-roan.vercel.app/api/${slug}`
 		);
 		const project = {
 			slug,
