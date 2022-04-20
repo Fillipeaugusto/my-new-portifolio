@@ -461,7 +461,9 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
 	const { slug } = params;
 	try {
-		const projectData = await api.get<Project>(`/${slug}`);
+		const projectData = await api.get<Project>(
+			`https://test-blog-roan.vercel.app/projects/${slug}`
+		);
 		const project = {
 			slug,
 			id: projectData.data.id,
