@@ -38,6 +38,7 @@ interface Images {
 interface Project {
 	id: number;
 	name: string;
+	madeIn: string;
 	description: string;
 	technology: string;
 	cover?: {
@@ -49,6 +50,13 @@ interface Project {
 	downloadUrl?: string;
 	instructions: string;
 	functions: Functions[];
+	anexos: [
+		{
+			name: string;
+			url: string;
+			type: 'download' | 'demo';
+		}
+	];
 }
 
 interface Data {
@@ -74,9 +82,9 @@ export default function Projects({ project }: Data) {
 						>
 							<li>
 								<div className="flex items-center">
-									<a href="/" className="mr-2 text-sm font-medium text-gray-900">
-										Voltar
-									</a>
+									<Link href="/">
+										<a className="mr-2 text-sm font-medium text-gray-900">Voltar</a>
+									</Link>
 									<svg
 										width={16}
 										height={20}
@@ -228,7 +236,7 @@ export default function Projects({ project }: Data) {
 													className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
 													aria-hidden="true"
 												/>
-												Feito em 9, 2020
+												Feito em {project.madeIn}
 											</div>
 										</div>
 									</div>
@@ -327,11 +335,8 @@ export default function Projects({ project }: Data) {
 							<p className="text-xl mb-4">Outros projetos</p>
 							{ProjectMock.map((mock) => {
 								return (
-									<Link
-										href={`http://localhost:3000/projects/${mock.slug}`}
-										key={mock.id}
-									>
-										<a href="">
+									<Link href={mock.slug} key={mock.id}>
+										<a>
 											<div className="p-4 bg-white shadow-xl hover:shadow-2xl trasition delay-150 duration-300 max-w-xl rounded-xl flex justify-start dark:bg-neutral-50 hover:bg-neutral-100 md:flex-row flex-col gap-4 mb-4">
 												<div className="relative">
 													<img
@@ -345,9 +350,10 @@ export default function Projects({ project }: Data) {
 													</div>
 													<p className="text-sm  mt-4">
 														{mock.description.length > 50
-															? mock.description.substring(0, 45) + '..'
+															? mock.description.substring(0, 40) + '..'
 															: mock.description}
 													</p>
+
 													{/* <p className="text-sm  text-white mt-4">{mock.description}</p> */}
 												</div>
 											</div>
@@ -365,6 +371,7 @@ export default function Projects({ project }: Data) {
 									description={project.description}
 									downloadUrl={project.downloadUrl}
 									instructions={project.instructions}
+									anexos={project.anexos}
 								/>
 							</div>
 						</div>
@@ -454,9 +461,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
 	const { slug } = params;
 	try {
-		const projectData = await api.get<Project>(
-			`https://test-blog-roan.vercel.app/api/${slug}`
-		);
+		const projectData = await api.get<Project>(`/${slug}`);
 		const project = {
 			slug,
 			id: projectData.data.id,
@@ -469,6 +474,8 @@ export const getServerSideProps: GetServerSideProps = async ({
 			downloadUrl: projectData.data.downloadUrl,
 			instructions: projectData.data.instructions,
 			functions: projectData.data.functions,
+			madeIn: projectData.data.madeIn,
+			anexos: projectData.data.anexos ? projectData.data.anexos : null,
 		};
 
 		return {

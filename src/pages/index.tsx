@@ -7,10 +7,14 @@ import { Me } from '../Mocks/Me';
 import MyExperience from '../components/MyExperience';
 import Link from 'next/link';
 import Certification from '../components/Certification';
+import Head from 'next/head';
 export default function Home() {
 	return (
 		<div className="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
 			{/* new-cards  */}
+			<Head>
+				<title>Dashboard</title>
+			</Head>
 			<section className="w-full py-12 bg-white lg:py-24">
 				<div className="max-w-6xl px-12 mx-auto text-center">
 					<div className="space-y-12 md:text-center">

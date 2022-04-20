@@ -4,31 +4,31 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export default (request: NextApiRequest, response: NextApiResponse) => {
 	const project = {
 		id: 1,
-		name: 'Ig News',
+		name: 'Happy - Web',
 		madeIn: 'ago - 2020',
 		description:
-			'O Ig.news é uma plataforma de assinatura para conteúdos em texto dedicada para desenvolvedores, o objetivo da plataforma é gerar conteúdos em texto e imagens para a comunidade de desenvolvedores.',
+			'O Happy é uma plataforma web onde pessoas podem buscar por orfanatos para visitas e se guiar pela localização, horário de visita e disponibilidade para visita em fins de semana.',
 		cover: {
-			src: '/assets/projects/ig-news/Home.png',
+			src: '/assets/projects/happy/Home.svg',
 			alt: 'Project 2',
 		},
 		technology: 'React Js ,Next Js ,NextAuth',
 		features: [{ name: 'Origin', description: 'Designed by Good Goods, Inc.' }],
 		images: [
 			{
-				src: '/assets/projects/ig-news/Home.png',
+				src: '/assets/projects/happy/Home.svg',
 				alt: 'img1',
 			},
 			{
-				src: '/assets/projects/ig-news/Posts.png',
+				src: '/assets/projects/happy/Mapa.svg',
 				alt: 'img2',
 			},
 			{
-				src: '/assets/projects/ig-news/InternadePost_n_logado.png',
+				src: '/assets/projects/happy/Mapa_hover.svg',
 				alt: 'img3',
 			},
 			{
-				src: '/assets/projects/ig-news/InternadePost.png',
+				src: '/assets/projects/happy/Perfil.png',
 				alt: 'img4',
 			},
 		],
@@ -45,10 +45,19 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
 			{ name: 'Chakra Ui' },
 		],
 		anexos: [
-			{ name: 'Ig News', url: 'https://ig-prod.vercel.app/', type: 'demo' },
 			{
-				name: 'Ig News',
-				url: 'https://codeload.github.com/Fillipeaugusto/ig-news/zip/refs/heads/main',
+				name: 'Happy web',
+				url: 'https://codeload.github.com/Fillipeaugusto/finances/zip/refs/heads/main',
+				type: 'demo',
+			},
+			{
+				name: 'Happy-web.zip',
+				url: 'https://codeload.github.com/Fillipeaugusto/finances/zip/refs/heads/main',
+				type: 'download',
+			},
+			{
+				name: 'Happy-api.zip',
+				url: 'https://codeload.github.com/Fillipeaugusto/finances/zip/refs/heads/main',
 				type: 'download',
 			},
 		],

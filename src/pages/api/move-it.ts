@@ -4,31 +4,31 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export default (request: NextApiRequest, response: NextApiResponse) => {
 	const project = {
 		id: 1,
-		name: 'Ig News',
+		name: 'Move It',
 		madeIn: 'ago - 2020',
 		description:
-			'O Ig.news é uma plataforma de assinatura para conteúdos em texto dedicada para desenvolvedores, o objetivo da plataforma é gerar conteúdos em texto e imagens para a comunidade de desenvolvedores.',
+			'O Move It é um projeto que visa adicionar gamificação na sua rotina de trabalho, para tornar o dia mais produtivo e divertido trazendo exercícios para o corpo e olhos a cada período de foco.',
 		cover: {
-			src: '/assets/projects/ig-news/Home.png',
-			alt: 'Project 2',
+			src: '/assets/projects/move-it/Home.png',
+			alt: 'Project 3',
 		},
-		technology: 'React Js ,Next Js ,NextAuth',
+		technology: 'Next Js',
 		features: [{ name: 'Origin', description: 'Designed by Good Goods, Inc.' }],
 		images: [
 			{
-				src: '/assets/projects/ig-news/Home.png',
+				src: '/assets/projects/move-it/Home.png',
 				alt: 'img1',
 			},
 			{
-				src: '/assets/projects/ig-news/Posts.png',
+				src: '/assets/projects/move-it/Home_ciclo_iniciado.png',
 				alt: 'img2',
 			},
 			{
-				src: '/assets/projects/ig-news/InternadePost_n_logado.png',
+				src: '/assets/projects/move-it/Home_ciclo_encerrado.png',
 				alt: 'img3',
 			},
 			{
-				src: '/assets/projects/ig-news/InternadePost.png',
+				src: '/assets/projects/move-it/Compartilhar.png',
 				alt: 'img4',
 			},
 		],
@@ -43,14 +43,6 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
 			{ name: 'Login com Github' },
 			{ name: 'Sessão com Next Auth' },
 			{ name: 'Chakra Ui' },
-		],
-		anexos: [
-			{ name: 'Ig News', url: 'https://ig-prod.vercel.app/', type: 'demo' },
-			{
-				name: 'Ig News',
-				url: 'https://codeload.github.com/Fillipeaugusto/ig-news/zip/refs/heads/main',
-				type: 'download',
-			},
 		],
 	};
 
