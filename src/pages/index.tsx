@@ -74,8 +74,8 @@ export default function Home() {
 									</svg>
 								</a>
 								<a
-									href="/downloads/curriculo-Fillipe-Augusto.pdf"
-									download="curriculo-Fillipe-Augusto.pdf"
+									href="/downloads/Curriculo-FILLIPE-AUGUSTO.pdf"
+									download="Curriculo-FILLIPE-AUGUSTO.pdf"
 									className=" flex block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
 									rel="noreferrer"
 								>
